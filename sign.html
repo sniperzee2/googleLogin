@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div
+      id="g_id_onload"
+      data-client_id="656997554804-vjh9rt3m8s57pb8p5skao4qhv6qp5p51.apps.googleusercontent.com"
+      data-auto_prompt="false"
+      data-login_uri="http://localhost:7000/dashboard"
+      ></div>
+    ></div>
+    <div
+      class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"
+      data-text="sign_in_with"
+      data-shape="rectangular"
+      data-logo_alignment="left"
+      data-skip_prompt_cookie="mytest"
+    ></div>
+    <script>
+      function handleCredentialResponse(response) {
+        // decodeJwtResponse() is a custom function defined by you
+        // to decode the credential response.
+        const responsePayload = JSON.parse(atob(response.credential.split('.')[1]));
+        // console.log("token"+ response.credential)
+        // console.log("ID: " + responsePayload.sub);
+        // console.log("Full Name: " + responsePayload.name);
+        // console.log("Given Name: " + responsePayload.given_name);
+        // console.log("Family Name: " + responsePayload.family_name);
+        // console.log("Image URL: " + responsePayload.picture);
+        // console.log("Email: " + responsePayload.email);
+        console.log(responsePayload)
+      }
+    </script>
+  </body>
+</html>
